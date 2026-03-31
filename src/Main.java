@@ -6,25 +6,37 @@ public class Main {
 
     public static void main(String[] args){
 
-        /*El desafío es un programa que pida dos números y los muestre ordenados de mayor a menor.
 
-           Podría ser utilizando operador ternario. */
+        try {
 
-        Scanner s = new Scanner(System.in);
+            // Initialized a Scanner Object Class
+            Scanner s = new Scanner(System.in);
 
-        System.out.println("Please give me first number : ");
-        Double num1 = s.nextDouble();
 
-        System.out.println("Now, give me the second one : ");
-        Double num2 = s.nextDouble();
+            // get two values
+            System.out.println("Please give me first number : ");
+            Double num1 = s.nextDouble();
 
-        Double biggest = (num1 > num2) ? num1 : num2;
+            System.out.println("Now, give me the second one : ");
+            Double num2 = s.nextDouble();
 
-        Double second = (num2 < num1) ? num2 : num1;
 
-        System.out.println("Biggest Number : " + biggest);
+            // logic
+            Double biggest = (num1 > num2) ? num1 : num2;
+            Double second = (num2 < num1) ? num2 : num1;
 
-        System.out.println("Second one Number : " + second);
+            // Print result
+            System.out.println("Biggest Number : " + biggest);
+
+            System.out.println("Second one Number : " + second);
+        } catch (Exception e){
+            System.out.println("Error : " + e + ", please write right values");
+            main(args);
+            System.exit(0);
+        }
+
+
+
 
     }
 }
