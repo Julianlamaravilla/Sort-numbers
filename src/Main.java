@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,16 +10,11 @@ public class Main {
 
         try {
 
-            // Initialized a Scanner Object Class
-            Scanner s = new Scanner(System.in);
-
 
             // get two values
-            System.out.println("Please give me first number : ");
-            Double num1 = s.nextDouble();
+            Double num1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Please give me first number : "));
 
-            System.out.println("Now, give me the second one : ");
-            Double num2 = s.nextDouble();
+            Double num2 = Double.parseDouble(JOptionPane.showInputDialog(null, "Now, give me the second one : "));
 
 
             // logic
@@ -26,17 +22,13 @@ public class Main {
             Double second = (num2 < num1) ? num2 : num1;
 
             // Print result
-            System.out.println("Biggest Number : " + biggest);
+            JOptionPane.showMessageDialog(null, "Biggest Number : " + biggest + "\nSecond one Number :" + second);
 
-            System.out.println("Second one Number : " + second);
         } catch (Exception e){
-            System.out.println("Error : " + e + ", please write right values");
+            JOptionPane.showMessageDialog(null, "Error : " + e + ", please write right values");
             main(args);
             System.exit(0);
         }
-
-
-
 
     }
 }
